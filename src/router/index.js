@@ -30,7 +30,7 @@ export const constRoutes = [
       {
         path: "mua",
         component: () =>
-            import(/* webpackChunkName: "home" */ "../views/Home.vue"),
+            import(/* webpackChunkName: "home" */ "../views/home/item.vue"),
         name: "mua",
         meta: {
           title: "波一个", // 导航菜单项标题
@@ -61,9 +61,9 @@ export const asyncRoutes = [
         },
       },
       {
-        path: "bla",
+        path: "item",
         component: () =>
-            import(/* webpackChunkName: "home" */ "../views/About.vue"),
+            import(/* webpackChunkName: "home" */ "../views/about/item.vue"),
         name: "bla",
         meta: {
           title: "关于我们",

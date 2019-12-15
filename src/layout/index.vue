@@ -19,3 +19,8 @@
         }
     };
 </script>
+<style>
+    .app-wrapper{
+        display: flex;
+    }
+</style>
