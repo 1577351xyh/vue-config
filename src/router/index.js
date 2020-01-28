@@ -15,12 +15,12 @@ export const constRoutes = [
     path: "/",
     component: Layout,// 应用布局
     redirect: "/home",
-    meta: {title: '首页', icon:'qq'},
+    meta: { title: '首页', icon: 'qq' },
     children: [
       {
         path: "home",
         component: () =>
-            import(/* webpackChunkName: "home" */ "../views/Home.vue"),
+          import(/* webpackChunkName: "home" */ "../views/Home.vue"),
         name: "home",
         meta: {
           title: "Home", // 导航菜单项标题
@@ -30,7 +30,7 @@ export const constRoutes = [
       {
         path: "mua",
         component: () =>
-            import(/* webpackChunkName: "home" */ "../views/home/item.vue"),
+          import(/* webpackChunkName: "home" */ "../views/home/item.vue"),
         name: "mua",
         meta: {
           title: "波一个", // 导航菜单项标题
@@ -47,12 +47,12 @@ export const asyncRoutes = [
     path: "/about",
     component: Layout,
     redirect: "/about/index",
-    meta:{title:'权限页面'},
+    meta: { title: '权限页面' },
     children: [
       {
         path: "index",
         component: () =>
-            import(/* webpackChunkName: "home" */ "../views/About.vue"),
+          import(/* webpackChunkName: "home" */ "../views/About.vue"),
         name: "about",
         meta: {
           title: "用户中心",
@@ -63,7 +63,7 @@ export const asyncRoutes = [
       {
         path: "item",
         component: () =>
-            import(/* webpackChunkName: "home" */ "../views/about/item.vue"),
+          import(/* webpackChunkName: "home" */ "../views/about/item.vue"),
         name: "bla",
         meta: {
           title: "关于我们",

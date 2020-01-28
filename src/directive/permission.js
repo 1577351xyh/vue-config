@@ -2,11 +2,11 @@ import router from '../router'
 import store from '../store'
 import {Message} from 'element-ui'
 import {getToken} from '../../utils/auth' // 从cookie获取令牌
-const whiteList = ['/login'] // 无需令牌白名单 router.beforeE
+const whiteList = ['/login']; // 无需令牌白名单 router.beforeE
 
 router.beforeEach(async (to, from, next) => {
     // 获取令牌判断用户是否登录
-    const hasToken = getToken()
+    const hasToken = getToken();
     if (hasToken) {
         if (to.path === '/login') {
             // 若已登录重定向至首页
@@ -22,8 +22,8 @@ router.beforeEach(async (to, from, next) => {
                     const {roles} = await store.dispatch('user/getInfo');
                     // 根据当前用户角色动态生成路由
                     //过滤路由(由路由的roles进行配置)
+                    //accessroutes是过滤生成后的路由
                     const accessRoutes = await store.dispatch('permission/generateRoutes', roles);
-                    console.log(accessRoutes)
                     // 添加这些路由至路由器
                     router.addRoutes(accessRoutes);
                     // 继续路由切换，确保addRoutes完成

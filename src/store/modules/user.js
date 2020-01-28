@@ -35,6 +35,8 @@ const actions = {
         return new Promise((resolve) => {
             setTimeout(() => {
                 const roles = state.token === 'admin' ? ['admin'] : ['editor']
+                // const roles = 'aaa'
+                console.log(roles)
                 commit("SET_ROLES", roles);
                 resolve({roles});
             }, 1000); });
